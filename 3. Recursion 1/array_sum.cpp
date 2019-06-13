@@ -25,6 +25,13 @@ int sum(int input[], int n) {
      Return output and don't print it.
      Taking input and printing output is handled automatically.
   */
+  int sum1 = 0;
+    if(n == 0 || n == 1)
+        return *input;
+    
+    sum1 = sum(input+1, n-1);
+    return sum1 + *input;
+
 
 }
 
