@@ -45,9 +45,9 @@ int lastIndex(int input[], int size, int x) {    // from back to front
 
 }
 
-int lastIndex2(int input[], int size, int x) {   // from front to back
+// int lastIndex2(int input[], int size, int x) {   // from front to back
 
-}
+// }
 
 
 
@@ -66,7 +66,7 @@ int main(){
     cin >> x;
     
     cout << lastIndex(input, n, x) << endl;
-    cout << lastIndex2(input, n, x) << endl;
+    //cout << lastIndex2(input, n, x) << endl;
 
 }
 
