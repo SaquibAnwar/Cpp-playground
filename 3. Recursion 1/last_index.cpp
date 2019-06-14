@@ -24,12 +24,28 @@
 //#include "Solution.h"
 using namespace std;
 
-int lastIndex(int input[], int size, int x) {
+int lastIndex(int input[], int size, int x) {    // from back to front
   /* Don't write main().
      Don't read input, it is passed as function argument.
      Return output and don't print it.
      Taking input and printing output is handled automatically.
   */
+
+    if(size == 0){
+        if(input[size] != x)
+            return -1;
+    }
+    
+    if(input[size] == x)
+        return size;
+    
+    int ans = lastIndex(input, size-1, x);
+    
+    return size-1;
+
+}
+
+int lastIndex2(int input[], int size, int x) {   // from front to back
 
 }
 
@@ -50,6 +66,7 @@ int main(){
     cin >> x;
     
     cout << lastIndex(input, n, x) << endl;
+    cout << lastIndex2(input, n, x) << endl;
 
 }
 
