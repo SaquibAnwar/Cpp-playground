@@ -71,6 +71,22 @@ void print_linkedlist_spl(node*head)
     
 }
 
+void print_linkedlist_spl(node*head)
+{
+    //write your code here
+    if(head == NULL)
+        return;
+    
+    if(head == NULL)
+        cout << head -> data <<" ";
+    
+
+    print_linkedlist_spl(head->next);
+    cout << head -> data << " ";
+    
+}
+
+
 int main()
 {
     node*head=takeinput();
