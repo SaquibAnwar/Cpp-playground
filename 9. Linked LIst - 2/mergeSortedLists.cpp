@@ -67,7 +67,7 @@ Node* mergeTwoLLs(Node *head1, Node *head2) {
     
     Node * temp1 = head1;
     Node * temp2 = head2;
-    Node * dummy = new Node[0];
+    Node * dummy = new Node(-1);
     Node * head = dummy;
     
     while(temp1 != NULL && temp2 != NULL){

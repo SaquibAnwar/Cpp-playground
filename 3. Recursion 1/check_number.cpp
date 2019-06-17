@@ -28,18 +28,13 @@ bool checkNumber(int input[], int size, int x) {
      Return output and don't print it.
      Taking input and printing output is handled automatically.
   */
-    if(size == 0){
-        if(*input != x)
-            return false;
-        else
-            return true;
-    }
+    if(size == 0)
+        return false;
     
-    if(input[size] == x)
+    if(input[0] == x)
         return true;
     
-    bool check = checkNumber(input, size-1, x);
-    return check;
+    return checkNumber(input+1, size-1, x);
 
 }
 
