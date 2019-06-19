@@ -1,17 +1,19 @@
-// Code: Midpoint of LL
+// Even after Odd LinkedList
 // Send Feedback
-// Given a linked list, find and return the midpoint.
-// If the length of linked list is even, return the first mid point.
+// Arrange elements in a given Linked List such that, all even numbers are placed after odd numbers. Respective order of elements should remain same.
+// You don't need to print the elements, instead return the head of updated LL.
 // Input format : Linked list elements (separated by space and terminated by -1)`
 
 // Sample Input 1 :
-// 1 2 3 4 5 -1
+// 1 4 5 2 -1
 // Sample Output 1 :
-// 3
+// 1 5 4 2 
 // Sample Input 2 :
-// 1 2 3 4 -1
+// 1 11 3 6 8 0 9 -1
+// Sample Output 2 :
+// 1 11 3 9 6 8 0
 
-//Find midpoint of a Linked List
+//Arrange elements in a Linked List such that all even numbers are placed after odd numbers
 #include <iostream>
 class node{
 public:
@@ -24,7 +26,7 @@ public:
 };
 
 using namespace std;
-//#include "solution.h"
+// #include "solution.h"
 node* takeinput(){
     int data;
     cin>>data;
@@ -54,39 +56,34 @@ void print(node *head)
     cout<<endl;
 }
 
-node* midpoint_linkedlist(node *head)
+node* arrange_LinkedList(node* head)
 {
-    // Write your code here
-    node * slow;
-    node * fast;
-    slow = head;
-    fast = head;
+    //write your code here
+    node * temp = head;
+    node * tail = NULL;
     
-    while(fast != NULL){
-        fast = fast -> next;
-        if(fast != NULL){
-            slow = slow -> next;
-            fast = fast -> next;
-        }
+    while(temp -> next != NULL){
+        temp = temp -> next;
     }
     
-    node *a = head;
-    node *b = slow -> next;
-    cout<<a->data <<" "<<b->data<<endl;
-    //slow -> next = NULL;
-
-    return slow;
-
+    tail = temp;
     
+    cout << tail -> data << endl;
+    
+    
+    // while((temp -> data)%2 != 0){
+    //     temp = temp -> next;
+    // }
 
+    return head;
+    
 }
 
 
-int main(){
+int main()
+{
     node*head=takeinput();
-    node* mid=midpoint_linkedlist(head);
-    cout<<mid->data;
+    head=arrange_LinkedList(head);
+    print(head);
     return 0;
 }
-
-
