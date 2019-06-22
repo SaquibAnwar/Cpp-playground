@@ -31,24 +31,6 @@ TreeNode<int>* takeInputLevelWise(){
 }
 
 
-TreeNode<int>* takeInput(){
-    int rootData;
-    cout << "Enter Data" << endl;
-    cin >> rootData;
-    TreeNode<int>* root = new TreeNode<int>(rootData);
-
-    int n;
-    cout << "Enter number of children of " << rootData << endl;
-    cin >> n;
-    for(int i = 0; i < n; i++){
-        TreeNode<int>* child = takeInput();
-        root -> children.push_back(child);
-    }
-    return root;
-}
-
-
-
 void printTree(TreeNode<int>* root){
 
     if(root == NULL){
@@ -66,17 +48,19 @@ void printTree(TreeNode<int>* root){
     }
 }
 
-int numNodes(TreeNode<int>* root){              // to count number of nodes
+void printAtLevelK(TreeNode<int>* root, int k){
     if(root == NULL)
-        return 0;
-    
-    int ans = 1;
-    for(int i = 0; i < root -> children.size(); i++){
-        ans += numNodes(root -> children[i]);
-    }
-    return ans;
-}
+        return;
 
+    if(k == 0){
+        cout << root -> data << endl;
+        return;
+    }
+    
+    for(int i = 0; i < root -> children.size(); i++){
+        printAtLevelK(root -> children[i], k-1);
+    }
+}
 
 int main(){
     // TreeNode<int>* root = new TreeNode<int>(1);
@@ -87,6 +71,7 @@ int main(){
 
     TreeNode<int>* root = takeInputLevelWise();
     printTree(root);
-    cout << "num: " << numNodes(root) << endl;
+    cout << "Level 2: " << endl;
+    printAtLevelK(root, 2);
     // TODO delete the tree;
 }
