@@ -48,4 +48,10 @@ int main(){
     cout << v.at(2) << endl;
     cout << v.at(6) << endl;
     */
+   cout << endl << endl << endl;
+   cout<<v.at(10)<<endl;
+   cout<<v.size()<<endl;
+   v.push_back(1010);
+   cout<< v.at(v.size()-1);
+
 }

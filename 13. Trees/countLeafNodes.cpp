@@ -67,6 +67,18 @@ int numLeafNodes(TreeNode<int>* root) {
      * Return output and don't print it.
      * Taking input and printing output is handled automatically.
      */
+    if(root == NULL)
+        return 0;
+
+    static int count = 0;
+    for(int i = 0; i < root -> children.size(); i++){
+        if(root -> children[i] == NULL)
+            count++;
+        else
+            return numLeafNodes(root->children[i]);
+    }
+
+    return count;
 
 }
 

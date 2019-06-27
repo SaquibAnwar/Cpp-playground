@@ -67,7 +67,15 @@ int height(TreeNode<int>* root) {
      * Return output and don't print it.
      * Taking input and printing output is handled automatically.
      */
+    int ans = 0;
 
+    for(int i = 0; i < root -> children.size(); i++){
+        int childHeight = height(root -> children[i]);
+        if(childHeight > ans){
+            ans = childHeight;
+        }
+    }
+    return ans + 1;
 }
 
 
