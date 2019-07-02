@@ -88,6 +88,5 @@ int main() {
     int n;
     cin >> n;
     cout << indexOfNRecursive(head, n);
-    
 }
 
