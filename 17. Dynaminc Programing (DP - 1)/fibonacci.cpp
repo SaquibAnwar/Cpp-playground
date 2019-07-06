@@ -34,6 +34,13 @@ int fibo_helper(int n, int * ans){
 }
 
 
+int fib_2(int n){
+    int* ans = new int[n+1];
+    for(int i = 0; i <= n; i++)
+        ans[i] = -1;
+
+    return fibo_helper(n, ans);
+}
 
 // Dynamic Programing
 int fib_3(int n){
@@ -47,15 +54,6 @@ int fib_3(int n){
     }
 
     return ans[n];
-}
-
-
-int fib_2(int n){
-    int* ans = new int[n+1];
-    for(int i = 0; i <= n; i++)
-        ans[i] = -1;
-
-    return fibo_helper(n, ans);
 }
 
 

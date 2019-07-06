@@ -36,6 +36,38 @@
 
 using namespace std;
 
+// Dyanmic Programing
+int minSteps_3(int n){
+    int* arr = new int[n+1];
+    
+    int i = 0;
+    while(i <= n){
+        int x = INT_MAX;
+        int y = INT_MAX, z = INT_MAX;
+        if(n%2 == 0){
+            y = n/2;
+            n = n/2;
+        }
+            
+        else if(n%3 == 0){
+            z = n/3;
+            n = n/3;
+        }
+
+        else{
+            x = n-1;
+            n = n-1;
+        }
+
+        int ans = min(x, min(y, z));
+
+        arr[i] = ans;
+        i++;
+    }
+    return arr[n];
+}
+
+
 // Memoization
 int minStepsHelper(int n, int* ans){
     // Base case
@@ -113,5 +145,5 @@ int minSteps(int n){
 int main(){
     int n;
     cin >> n;
-    cout << minSteps(n) << endl;
+    cout << minSteps_3(n) << endl;
 }
