@@ -38,33 +38,31 @@ using namespace std;
 
 // Dyanmic Programing
 int minSteps_3(int n){
-    int* arr = new int[n+1];
-    
-    int i = 0;
-    while(i <= n){
-        int x = INT_MAX;
-        int y = INT_MAX, z = INT_MAX;
-        if(n%2 == 0){
-            y = n/2;
-            n = n/2;
-        }
-            
-        else if(n%3 == 0){
-            z = n/3;
-            n = n/3;
-        }
+    int* dp = new int[n+1];
 
-        else{
-            x = n-1;
-            n = n-1;
-        }
-
-        int ans = min(x, min(y, z));
-
-        arr[i] = ans;
-        i++;
+    for(int i = 0; i <= n; i++){
+        dp[i] = 0;
     }
-    return arr[n];
+    dp[1] = 0;
+    dp[2] = 1;
+    dp[3] = 1;
+
+    int ans1, ans2, ans3;
+
+    for(int i = 4; i <= n; i++){
+        ans1 = ans2 = ans3 = n;
+        ans1 =dp[i-1];
+
+        if(i%2 == 0){
+            ans2 = dp[i/2];
+        }
+
+        if(i%3 == 0){
+            ans3 = dp[i/3];
+        }
+        dp[i] = 1 + min(ans1, min(ans2, ans3)); 
+    }
+    return dp[n];
 }
 
 

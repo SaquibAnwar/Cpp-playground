@@ -76,9 +76,6 @@ node* midpoint_linkedlist(node *head)
     //slow -> next = NULL;
 
     return slow;
-
-    
-
 }
 
 
