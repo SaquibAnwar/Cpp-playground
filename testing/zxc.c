@@ -1,0 +1,1 @@
+#include<stdio.h> int main(){ float a=1.5f; while(a){ printf("%.f ",a); a-=.5f; } return 0; }
