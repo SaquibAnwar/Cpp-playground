@@ -37,7 +37,6 @@ void printBFS(int** edges, int n, int sv, bool* visited){
             }
         }
     }
-    delete [] visited;
 }
 
 void BFS(int** edges, int n){
