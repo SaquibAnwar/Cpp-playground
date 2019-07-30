@@ -20,7 +20,7 @@ int knapsack(int* weights, int* values, int n, int maxWeight){
     int ans = prev[maxWeight];
     delete[] curr;
     delete[] prev;
-    return prev[maxWeight];
+    return ans;
 }
 
 int main(){
