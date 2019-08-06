@@ -13,8 +13,7 @@ void permute(string a, int l, int r)
     {  
         // Permutations made  
         for (int i = l; i <= r; i++)  
-        {  
-  
+        {
             // Swapping done  
             swap(a[l], a[i]);  
   
