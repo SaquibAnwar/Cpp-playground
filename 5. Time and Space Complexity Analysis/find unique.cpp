@@ -32,7 +32,6 @@ int FindUnique(int arr[], int size){
     for(int i = 0; i < size; i++)
         xorr = xorr^arr[i];
     return xorr;
-    
 }
 
 
@@ -51,10 +50,7 @@ int main() {
 	return 0;
 }
 
-
 // Approches:
 // 1 ) O(n^2) - brute force
 // 2 ) by sorting that will give O(nlogn)
 // 3 ) xor method given above which will give O(n) but is only for one unique element
-
-
