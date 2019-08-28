@@ -3,7 +3,8 @@ using namespace std;
 #include "student.cpp"
 
 int main(){
-    Student s1;
+    Student s1(23, 609);
+    s1.display();
     Student * s2 = new Student;
 
     s1.setAge(20);

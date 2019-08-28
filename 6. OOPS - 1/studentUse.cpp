@@ -10,7 +10,7 @@ int main() {
 
     cout<< "s1 rollno : " << s1.rollno<<endl;
     cout<<"s1 age : " <<s1.getAge()<<endl;
-
+    
     s1.display();
 
     // Create objects dynamically
@@ -25,4 +25,6 @@ int main() {
     cout<< "s6 age : " <<s2 -> getAge()<<endl;
 
     s2 -> display();
+
+    delete s2;
 }
