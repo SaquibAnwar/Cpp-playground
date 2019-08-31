@@ -2,7 +2,7 @@
 
 using namespace std;
 
-bool sorted(int a[], int n){
+bool sorted(int *a, int n){
     if(n == 1 || n == 0)
         return true;
 
@@ -15,8 +15,9 @@ bool sorted(int a[], int n){
 
 
 int main(){
-    int a[] = {1, 2, 3, 6, 7};
+    int a[] = {1, 2, 3, 9, 7};
     int n = 5;
 
-    cout << sorted(a, n) << endl;
+    sorted(a, n)? cout << "Yes" : cout << "NO";
+    cout << endl;
 }
