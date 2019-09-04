@@ -69,6 +69,13 @@ void preOrder(BinaryTreeNode<int> *root) {
      * Print output and don't return it.
      * Taking input is handled automatically.
      */
+    if(root == NULL){
+        return;
+    }
+
+    cout << root -> data << " ";
+    preOrder(root->left);
+    preOrder(root->right);
 
 }
 

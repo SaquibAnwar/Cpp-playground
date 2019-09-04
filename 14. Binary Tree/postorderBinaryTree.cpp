@@ -70,6 +70,13 @@ void postOrder(BinaryTreeNode<int> *root) {
      * Print output and don't return it.
      * Taking input is handled automatically.
      */
+    if(root == NULL){
+        return;
+    }
+
+    postOrder(root->left);
+    postOrder(root->right);
+    cout << root -> data << " ";
     
 }
 
