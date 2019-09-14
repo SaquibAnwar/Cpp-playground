@@ -41,6 +41,28 @@ pair<int, int> diameterOptimized(node* root){
 }
 
 
+class Pair{
+    public:
+        int height;
+        int diameter;
+};
+
+Pair fastDiameter(node* root){
+    Pair p;
+    if(root == NULL){
+        p.height = p.diameter = 0;
+        return p;
+    }
+
+    Pair left = fastDiameter(root->left);
+    Pair right = fastDiameter(root->right);
+
+    p.height = max(left.height, right.height)+1;
+    p.diameter = max(left.height+right.height, max(left.diameter, right.diameter));
+    return p;
+}
+
+
 void printTree(node* root){
     if(root == NULL)
         return;
@@ -68,6 +90,10 @@ int main(){
     pair<int, int> p = diameterOptimized(root);             //O(n)
     cout << "Height : " << p.first << endl;
     cout << "Diameter : " << p.second << endl;
+
+    Pair ans = fastDiameter(root);                          //O(n)
+    cout << "Height : " << ans.height << endl;
+    cout << "Diameter : " << ans.diameter << endl;
 }
 
-// 1 2 12 3 -1 -1 -1  4 5 -1 -1 6 7 8 9 10 11 -1 -1 -1 -1 -1 -1 -1 -1
+// 1 2 12 3 -1 -1 15 4 5 -1 -1 -1 -1 6 7 8 9 10 11 -1 -1 -1 -1 -1 -1 -1 -1
