@@ -29,7 +29,7 @@ node* buildTree(){
 }
 
 node* buildTreeLevelWise(){
-    cout << "Enter Data : ";
+    //cout << "Enter Data : ";
     int data;
     cin >> data;
 
@@ -44,7 +44,7 @@ node* buildTreeLevelWise(){
         node* front = pendingNodes.front();
         pendingNodes.pop();
         
-        cout << "Enter Left Child of " << root -> data << ": ";
+       // cout << "Enter Left Child of " << root -> data << ": ";
         int leftChild;
         cin >> leftChild;
         if(leftChild != -1){
@@ -53,7 +53,7 @@ node* buildTreeLevelWise(){
             pendingNodes.push(child);
         }
 
-        cout << "Enter Right Child of " << front -> data << ": ";
+        //cout << "Enter Right Child of " << front -> data << ": ";
         int rightChild;
         cin >> rightChild;
         if(rightChild != -1){
