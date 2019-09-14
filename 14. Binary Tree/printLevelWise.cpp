@@ -74,17 +74,51 @@ BinaryTreeNode<int>* takeInput() {
     return root;
 }
 
-void printLevelWise(BinaryTreeNode<int> *root) {
-    /* Don't write main().
-     * Don't read input, it is passed as function argument.
-     * Print output and don't return it.
-     * Taking input is handled automatically.
-     */
-
-}
+void printLevelWise(BinaryTreeNode<int> *root); 
 
 
 int main() {
     BinaryTreeNode<int>* root = takeInput();
     printLevelWise(root);
 }
+
+// Sample Input :
+// 8 3 10 1 6 -1 14 -1 -1 4 7 13 -1 -1 -1 -1 -1 -1 -1
+// Sample Output :
+// 8:L:3,R:10
+// 3:L:1,R:6
+// 10:L:-1,R:14
+// 1:L:-1,R:-1
+// 6:L:4,R:7
+// 14:L:13,R:-1
+// 4:L:-1,R:-1
+// 7:L:-1,R:-1
+// 13:L:-1,R:-1
+
+void printLevelWise(BinaryTreeNode<int> *root){
+    queue<BinaryTreeNode<int>*> q;
+    q.push(root);
+
+    while(!q.empty()){
+        BinaryTreeNode<int>* front = q.front();
+        q.pop();
+        cout << front->data <<":";
+        if(front->left){
+            q.push(front->left);
+            cout <<"L:"<<front->left->data<<",";
+        }
+        else{
+            cout <<"L:"<<-1<<",";
+        }
+        if(front->right){
+            q.push(front->right);
+            cout <<"R:"<<front->right->data;
+        }
+        else{
+            cout <<"R:"<<-1;
+        }
+        cout << endl;
+    }
+}
+
+

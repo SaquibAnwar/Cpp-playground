@@ -2,29 +2,8 @@
 
 using namespace std;
 
-int height(node* root){
-    if(root == NULL){
-        return 0;
-    }
-
-    int h1 = height(root->left);
-    int h2 = height(root->right);
-    return 1+max(h1, h2);
-}
-
-
-int diameter(node* root){
-    if(root == NULL){
-        return 0;
-    }
-
-    int h1 = height(root->left);
-    int h2 = height(root->right);
-    int op1 = h1+h2;
-    int op2 = diameter(root->left);
-    int op3 = diameter(root->right);
-    return max(op1, max(op2, op3));
-}
+int height(node*);
+int diameter(node*);
 
 pair<int, int> diameterOptimized(node* root){
     pair<int,int> p;
@@ -97,3 +76,27 @@ int main(){
 }
 
 // 1 2 12 3 -1 -1 15 4 5 -1 -1 -1 -1 6 7 8 9 10 11 -1 -1 -1 -1 -1 -1 -1 -1
+
+int height(node* root){
+    if(root == NULL){
+        return 0;
+    }
+
+    int h1 = height(root->left);
+    int h2 = height(root->right);
+    return 1+max(h1, h2);
+}
+
+
+int diameter(node* root){
+    if(root == NULL){
+        return 0;
+    }
+
+    int h1 = height(root->left);
+    int h2 = height(root->right);
+    int op1 = h1+h2;
+    int op2 = diameter(root->left);
+    int op3 = diameter(root->right);
+    return max(op1, max(op2, op3));
+}
