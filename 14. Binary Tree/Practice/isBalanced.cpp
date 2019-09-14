@@ -66,9 +66,52 @@ BinaryTreeNode<int>* takeInput() {
     return root;
 }
 
+class Pair{
+
+    public:
+        int height;
+        bool isBalanced;
+};
+
+Pair isBalancedHelper(BinaryTreeNode<int>* root){
+    Pair p;
+    if(root == NULL){
+        p.height = 0;
+        p.isBalanced = true;
+        return p;
+    }
+
+    Pair left = isBalancedHelper(root->left);
+    Pair right = isBalancedHelper(root->right);
+
+    p.height = max(left.height, right.height)+1;
+    if(left.isBalanced && right.isBalanced){
+        Pair left = isBalancedHelper(root->left);
+        Pair right = isBalancedHelper(root->right);
+
+        p.height = max(left.height, right.height)+1;
+        if(abs(left.height-right.height) >= -1 && abs(left.height-right.height) <= 1){
+            p.isBalanced = true;
+        }
+        else{
+            p.isBalanced = false;
+        }
+    }
+    else{
+        p.isBalanced = false;
+    }
+    return p;
+}
+
+
 bool isBalanced(BinaryTreeNode<int> *root) {
     // Write your code here
-
+    Pair ans = isBalancedHelper(root);
+    if(ans.isBalanced)
+        return true;
+    else{
+        return false;
+    }
 }
 
 

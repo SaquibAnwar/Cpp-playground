@@ -9,3 +9,21 @@
 // 5 6 10 2 3 -1 -1 -1 -1 -1 9 -1 -1
 // Sample Output :
 // 35
+
+
+#include"tree.h"
+
+int sum(node* root){
+    if(root == NULL){
+        return 0;
+    }
+
+    return root->data + sum(root->left) + sum(root->right);
+}
+
+
+int main(){
+    node* root = buildTreeLevelWise();
+    cout << endl;
+    cout << sum(root) << endl;
+}
