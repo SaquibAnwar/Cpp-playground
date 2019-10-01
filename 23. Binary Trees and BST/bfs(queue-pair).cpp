@@ -10,6 +10,7 @@ void bfs(node* root){
 
     while(!q.empty()){
         node* front = q.front();
+        
         if(front == NULL){
             cout << endl;
             q.pop();
