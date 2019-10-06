@@ -10,7 +10,6 @@ int sum(node* root){
     return root->data + sum(root->left) + sum(root->right);
 }
 
-
 int count(node* root){
     if(root == NULL){
         return 0;
