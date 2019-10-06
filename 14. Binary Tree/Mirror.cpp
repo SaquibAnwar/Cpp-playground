@@ -105,6 +105,14 @@ void printLevelATNewLine(BinaryTreeNode<int> *root) {
 
 void mirrorBinaryTree(BinaryTreeNode<int>* root) {
     // Write your code here
+    if(root == NULL)
+        return;
+    
+    
+    mirrorBinaryTree(root->left);
+    mirrorBinaryTree(root->right);
+    swap(root->left, root->right);
+    return;
 
 }
 
