@@ -65,6 +65,13 @@ void DFS(int** edges, int n){
 }
 
 
+// 4 4
+// 0 1
+// 0 3
+// 1 2
+// 2 3
+// 1 3
+
 int main(){
     int n;
     int e;

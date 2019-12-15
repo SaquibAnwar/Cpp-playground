@@ -22,6 +22,13 @@ void printDFS(int** edges, int n, int sv, bool* visited){
     }
 }
 
+// 4 4
+// 0 1
+// 0 3
+// 1 2
+// 2 3
+// 1 3
+
 int main(){
     int n;
     int e;

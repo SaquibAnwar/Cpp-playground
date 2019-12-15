@@ -29,7 +29,12 @@ void printBFS(int** edges, int n, int sv){
     delete [] visited;
 }
 
-
+// 4 4
+// 0 1
+// 0 3
+// 1 2
+// 2 3
+// 1 3
 
 int main(){
     int n;
