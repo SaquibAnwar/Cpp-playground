@@ -1,24 +1,25 @@
 #include<bits/stdc++.h>
+typedef long long ll;
 
 using namespace std;
 
 int main(){
-    long n;
+    ll n;
     cin >> n;
-    long* v = new long[n]; 
+    ll* v = new ll[n+1]; 
 
-    for(long i = 0; i < n; i++){
+    for(ll i = 1; i <= n; i++){
         v[i] = 0;
     }
 
-    for(long i = 0; i < n-1; i++)
+    for(ll i = 1; i < n; i++)
     {
-        long num;
+        ll num;
         cin >> num;
         v[num] = 1;
     }
 
-    for(long i = 0; i < n; i++)
+    for(ll i = 1; i <= n; i++)
     {
         if(v[i] == 0){
             cout << i << endl;
