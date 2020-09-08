@@ -24,14 +24,46 @@
 
 using namespace std;
 
+int partyHalls(vector<int> start, vector<int> end)
+{
+    sort(start.begin(), start.end());
+    sort(end.begin(), end.end());
+    int partyHalls = 0, ans = 0;
+    int i = 0, j = 0;
+
+    while(i < start.size() and j < end.size())
+    {
+        if(start[i] < end[j])
+        {
+            partyHalls++;
+            i++;
+        }
+        else
+        {
+            partyHalls--;
+            j++;
+        }
+
+        ans = max(ans, partyHalls);
+    }
+
+    return ans;
+}
 
 int main()
 {
-    int t;
-    cin >> t;
-    while(t--)
+    int n;
+    cin >> n;
+
+    vector<int> start, end;
+
+    for(int i = 0; i < n; i++);
     {
-        int a, b;
-        cin >> a >> b;
+        int x, y;
+        cin >> x >> y;
+        start.push_back(x);
+        end.push_back(y);
     }
+
+    cout << partyHalls(start, end) << endl;
 }
